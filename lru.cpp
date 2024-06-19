@@ -47,3 +47,12 @@ private:
     size_t m_capacity;
     shared_mutex m_mtx;
 };
+
+int main()
+{
+    LruCache<int, string> lru;
+    lru.Put(1, "abc");
+    string val;
+    if(lru.Get(1, val))
+        cout << val;
+}
