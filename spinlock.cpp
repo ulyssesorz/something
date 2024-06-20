@@ -1,5 +1,4 @@
 #include <atomic>
-#include <iostream>
 #include <thread>
 
 class SpinLock
@@ -20,11 +19,3 @@ public:
 private:
     std::atomic_flag m_flag;
 };
-
-int main()
-{
-    SpinLock locker;
-    locker.lock();
-    std::cout << 1;
-    locker.unlock();
-}
